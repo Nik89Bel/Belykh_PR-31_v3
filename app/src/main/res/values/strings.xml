@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">BelykhNI_PR-31_03</string>
+    <string-array name="kvrt">
+        <item> 1. 1-о комнатная квартира</item>
+        <item> 2. 2-х комнатная квартира</item>
+        <item> 3. 3-х комнатная квартира</item>
+        <item> 4. Студия</item>
+    </string-array>
+</resources>

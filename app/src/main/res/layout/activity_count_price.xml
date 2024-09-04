@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginActivity"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="164dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="15dp"
+            android:fontFamily="sans-serif-medium"
+            android:text="на главное меню"
+            android:textColor="@color/c2"/>
+
+        <ImageButton
+            android:id="@+id/goBut"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:fontFamily="sans-serif-medium"
+            android:background="@drawable/arr1" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="75dp"
+            android:fontFamily="sans-serif-medium"
+            android:text="Расчет стоимости"
+            android:inputType="text"
+            android:textSize="35sp"
+            android:textColor="@color/c1"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="525dp"
+        android:layout_marginTop="0dp"
+        android:background="@color/c0"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="289dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="60dp"
+            android:background="@drawable/text"
+            android:fontFamily="sans-serif-medium"
+            android:text="Выберите один из вариантов ниже"
+            android:textSize="18sp" />
+
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="254dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="75dp"
+            android:background="@drawable/text"
+            android:entries="@array/kvrt"/>
+
+        <EditText
+            android:id="@+id/CountM"
+            android:layout_width="254dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="75dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/text"
+            android:fontFamily="sans-serif-medium"
+            android:textSize="18sp"
+            android:gravity="center"
+            android:inputType="number"
+            android:hint="Введите количество метров"/>
+
+        <Button
+            android:id="@+id/rasButton"
+            android:layout_width="360dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:layout_marginStart="25dp"
+            android:background="@drawable/rec1"
+            android:text="Рассчитать"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="20dp" />
+
+        <TextView
+            android:layout_width="200dp"
+            android:layout_height="70dp"
+            android:layout_marginStart="105dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/text"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="center"
+            android:text="результат"
+            android:textAlignment="center"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+</LinearLayout>

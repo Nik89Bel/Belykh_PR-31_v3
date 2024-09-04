@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginActivity"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="164dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:layout_marginStart="46dp"
+            android:layout_marginTop="60dp"
+            android:background="@drawable/img1"
+            android:fontFamily="sans-serif-medium" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:layout_marginStart="30dp"
+            android:fontFamily="sans-serif-medium"
+            android:text="Регистрация"
+            android:inputType="text"
+            android:textSize="35sp"
+            android:textColor="@color/c1"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="525dp"
+        android:layout_marginTop="0dp"
+        android:background="@color/c0"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="65dp"
+            android:layout_marginTop="70dp"
+            android:fontFamily="sans-serif-medium"
+            android:text="Введите ваш логин и пароль"
+            android:inputType="text"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/usernameEditText"
+            android:layout_width="290dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="65dp"
+            android:layout_marginTop="18dp"
+            android:fontFamily="sans-serif-medium"
+            android:hint="Логин"
+            android:inputType="text"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/userpasswordEditText"
+            android:layout_width="290dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="65dp"
+            android:layout_marginTop="40dp"
+            android:fontFamily="sans-serif-medium"
+            android:hint="Пароль"
+            android:inputType="textPassword"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/loginButton"
+            android:layout_width="355dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="160dp"
+            android:layout_marginStart="25dp"
+            android:background="@drawable/rec1"
+            android:text="Войти"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="20dp" />
+
+    </LinearLayout>
+
+</LinearLayout>
