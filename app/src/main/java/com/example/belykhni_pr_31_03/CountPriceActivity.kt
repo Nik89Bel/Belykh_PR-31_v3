@@ -52,14 +52,30 @@ class CountPriceActivity : AppCompatActivity() {
         }
         rasb.setOnClickListener {
             val type = spinner.selectedItem.toString()
-            val meters = countm.text.toString().toIntOrNull() ?: 0
-            val result = calculate(type, meters)
+            val meters = countm.text.toString().toDoubleOrNull() ?: 0
+            val result = calculate(type, meters as Double)
             if (type.isNullOrEmpty()) {
                 Toast.makeText(this, "Выберите тип квартиры", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
             if (countm.text.toString().isEmpty()) {
                 Toast.makeText(this, "Введите количество метров", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+            if (meters < 0) {
+                Toast.makeText(this, "Количество метров не может быть меньше нуля", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+            var pravda = true
+            when(type)
+            {
+                "1. 1-о комнатная квартира" -> if (meters < 15 || meters > 30) pravda = false
+                "2. 2-х комнатная квартира" -> if (meters < 25 || meters > 50) pravda = false
+                "3. 3-х комнатная квартира" -> if (meters < 40 || meters > 80) pravda = false
+                "4. Студия" -> if (meters < 15 || meters > 30) pravda = false
+            }
+            if (pravda == false){
+                Toast.makeText(this, "Не приемлимое количество метров", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
             else {
@@ -70,7 +86,7 @@ class CountPriceActivity : AppCompatActivity() {
             }
         }
     }
-    private fun calculate(type: String, meters: Int): String {
+    private fun calculate(type: String, meters: Double): String {
         val result = when (type) {
             "1. 1-о комнатная квартира" -> 80000 * meters * 1.4
             "2. 2-х комнатная квартира" -> 100000 * meters

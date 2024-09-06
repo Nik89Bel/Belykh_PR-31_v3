@@ -21,8 +21,9 @@ class LoginActivity : AppCompatActivity() {
         loginButton = findViewById<Button>(R.id.loginButton)
         getUserInfo()
         loginButton.setOnClickListener(View.OnClickListener {
-            if (log.text.toString() == "ekts" && pass.text.toString() == "ekts2024") {
+            if (log.text.toString() == "ects" && pass.text.toString() == "ects2024") {
                 val username = log.getText().toString()
+                val userpass = pass.getText().toString()
                 if (username.isEmpty()) {
                     Toast.makeText(
                         this@LoginActivity,
@@ -30,8 +31,17 @@ class LoginActivity : AppCompatActivity() {
                         Toast.LENGTH_SHORT
                     )
                         .show()
-                } else {
-                    saveUserInfo(username)
+                }
+                if (userpass.isEmpty()) {
+                    Toast.makeText(
+                        this@LoginActivity,
+                        "Введите пароль",
+                        Toast.LENGTH_SHORT
+                    )
+                        .show()
+                }
+                else {
+                    saveUserInfo(username, userpass)
                     startActivity(Intent(this@LoginActivity, CountPriceActivity::class.java))
                 }
             }
@@ -40,15 +50,17 @@ class LoginActivity : AppCompatActivity() {
         })
     }
 
-    private fun saveUserInfo(username: String) {
+    private fun saveUserInfo(username: String, userpass: String) {
         val sharedPreferences = getSharedPreferences("UserInfo", MODE_PRIVATE)
         val editor = sharedPreferences.edit()
         editor.putString("username", username)
+        editor.putString("userpass", userpass)
         editor.apply()
     }
 
     private fun getUserInfo(){
         val sharedPreferences = getSharedPreferences("UserInfo", MODE_PRIVATE)
         log.setText(sharedPreferences.getString("username", ""))
+        pass.setText(sharedPreferences.getString("userpass", ""))
     }
 }
